@@ -61,13 +61,24 @@
           <br>
           <input type="file" name="file">
 
+
           <br>
           <p class="lead">
-            3) Clique em "Converter para TXT" e aguarde o download.
+            3) Selecione o tipo de arquivo que deve ser gerado
+          </p>
+
+          <select class="form-control" name="conversion_type">
+            <option value="txt_portal">TXT do Portal da Transparência</option>
+            <option value="xml_verbas">XML de Cadastro de Verbas Remuneratórias (AUDESP)</option>
+          </select>
+
+          <br>
+          <p class="lead">
+            4) Clique em "Converter" e aguarde o download.
           </p>
           <br>
           <div class="mt-3">
-            <button type="submit" class="btn btn-primary">Converter para TXT</button>
+            <button type="submit" class="btn btn-primary">Converter</button>
           </div>
         </form>
       </div>

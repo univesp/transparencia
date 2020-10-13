@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:gen="http://www.tce.sp.gov.br/audesp/xml/generico"
+	xmlns:cvr="http://www.tce.sp.gov.br/audesp/xml/remuneracao"
+	xmlns:ap="http://www.tce.sp.gov.br/audesp/xml/atospessoal"
+	
+	targetNamespace="http://www.tce.sp.gov.br/audesp/xml/remuneracao"
+	elementFormDefault="qualified" 
+    attributeFormDefault="unqualified" 
+    version="1.0" 
+    xml:lang="pt-BR">
+	
+	<xs:import namespace="http://www.tce.sp.gov.br/audesp/xml/generico" schemaLocation="../generico/AUDESP_TIPOSGENERICOS_2020_A.XSD"/>
+	<xs:import namespace="http://www.tce.sp.gov.br/audesp/xml/atospessoal" schemaLocation="../generico/AUDESP_TIPOSGENERICOS_ATOSPESSOAL_2020_A.XSD"/>
+
+	<xs:annotation>
+        <xs:documentation>
+            <Data>2020-01-17</Data>
+            <VersaoRevisaoAnterior/>
+            <VersaoRevisaoNova>2020_A</VersaoRevisaoNova>
+            <Descricao>XSD de Cadastro de Verbas Remuneratórias</Descricao>
+            <Justificativa>Modelo para 2020</Justificativa>
+            <Autor>Veronez</Autor>
+        </xs:documentation>
+    </xs:annotation>
+	
+	<xs:complexType name="VerbasRemuneratorias_t">
+        <xs:sequence>    		
+            <xs:element name="Codigo" type="ap:CodigoAlphaNumericoPontoBarraTraco_t" minOccurs="1"	maxOccurs="1"/>
+            <xs:element name="Nome" minOccurs="1"	maxOccurs="1">
+            	<xs:simpleType>
+            		<xs:restriction base="xs:string">
+            			<xs:minLength value="1"/>
+            			<xs:maxLength value="255"/>
+            		</xs:restriction>
+            	</xs:simpleType>
+            </xs:element>
+            <xs:element name="EntraNoCalculoDoTetoConstitucional" type="ap:EntraNoCalculoDoTetoConstitucional_t" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+	    
+    <xs:complexType name="CadastroVerbasRemuneratorias_t">
+		<xs:sequence>
+			<xs:element name="Descritor"		type="gen:Descritor_t"	minOccurs="1" maxOccurs="1"/>
+            <xs:element name="VerbasRemuneratorias" type="cvr:VerbasRemuneratorias_t" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+  
+    <!-- root  -->
+    <xs:element name="CadastroVerbasRemuneratorias" type="cvr:CadastroVerbasRemuneratorias_t">
+		<xs:unique name="CodigoUnico">
+		    <xs:selector xpath="cvr:VerbasRemuneratorias"/>
+			<xs:field xpath="cvr:Codigo"/>
+		</xs:unique>
+    </xs:element>
+    <!-- root  -->
+	
+</xs:schema>
+

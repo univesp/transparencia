@@ -1,4 +1,6 @@
 .ruby-gemset
 .ruby-version
 
+.idea/
+
 output.txt
