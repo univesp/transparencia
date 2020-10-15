@@ -25,6 +25,8 @@ post '/upload' do
       run_txt_portal worksheet
     when 'xml_verbas'
       run_xml_verbas worksheet
+    when 'xml_folha_ordinaria'
+      run_xml_folha_ordinaria worksheet
     end
   else
     return CGI.unescape("<p>

@@ -1,0 +1,21 @@
+<foap:IdentificacaoAgentePublico>
+  <ap:CPF Tipo="02">
+    <gen:Numero>[CPF]</gen:Numero>
+  </ap:CPF>
+  <ap:Nome>[NOME]</ap:Nome>
+  <ap:MunicipioLotacao>[MUNICIPIO]</ap:MunicipioLotacao>
+  <ap:EntidadeLotacao>[ENTIDADE]</ap:EntidadeLotacao>
+  <ap:CargoPolitico>[CARGO_POLITICO]</ap:CargoPolitico>
+  <ap:FuncaoGoverno>[FUNCAO_GOVERNO]</ap:FuncaoGoverno>
+  <ap:Estagiario>[ESTAGIARIO]</ap:Estagiario>
+  <ap:CodigoCargo>[CODIGO_CARGO]</ap:CodigoCargo>
+  <ap:Situacao>[SITUACAO]</ap:Situacao>
+  <ap:RegimeJuridico>[REGIME_JURIDICO]</ap:RegimeJuridico>
+  <ap:PossuiAutorizRecebAcimaTeto>[AUTORIZACAO_TETO]</ap:PossuiAutorizRecebAcimaTeto>
+  <foap:Valores>
+    <foap:totalGeralDaRemuneracaoBruta>[REMUNERACAO_BRUTA]</foap:totalGeralDaRemuneracaoBruta>
+    <foap:totalGeralDeDescontos>[DESCONTOS]</foap:totalGeralDeDescontos>
+    <foap:totalGeralDaRemuneracaoLiquida>[REMUNERACAO_LIQUIDA]</foap:totalGeralDaRemuneracaoLiquida>
+    [VERBAS]
+  </foap:Valores>
+</foap:IdentificacaoAgentePublico>
