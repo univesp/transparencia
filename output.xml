@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<cap:CadastroVerbasRemuneratorias xsi:schemaLocation="http://www.tce.sp.gov.br/audesp/xml/remuneracao ../verbasremuneratorias/AUDESP_VERBAS_REMUNERATORIAS_2020_A.XSD" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cap="http://www.tce.sp.gov.br/audesp/xml/remuneracao" xmlns:aux="http://www.tce.sp.gov.br/audesp/xml/auxiliar" xmlns:ap="http://www.tce.sp.gov.br/audesp/xml/atospessoal" xmlns:gen="http://www.tce.sp.gov.br/audesp/xml/generico">
+<cap:Descritor>
+<gen:AnoExercicio>2020</gen:AnoExercicio>
+<gen:TipoDocumento>Cadastro de Verbas Remuneratórias</gen:TipoDocumento>
+<gen:Entidade>11219</gen:Entidade>
+<gen:Municipio>7107</gen:Municipio>
+<gen:DataCriacaoXML>2020-10-15</gen:DataCriacaoXML>
+</cap:Descritor>
+<cap:VerbasRemuneratorias>
+                    <cap:Codigo>1</cap:Codigo>
+                    <cap:Nome>SALARIO</cap:Nome>
+                    <cap:EntraNoCalculoDoTetoConstitucional
+                      >1</cap:EntraNoCalculoDoTetoConstitucional>
+                 </cap:VerbasRemuneratorias>
+                <cap:VerbasRemuneratorias>
+                    <cap:Codigo>11</cap:Codigo>
+                    <cap:Nome>INSS SOBRE SALARIO</cap:Nome>
+                    <cap:EntraNoCalculoDoTetoConstitucional
+                      >1</cap:EntraNoCalculoDoTetoConstitucional>
+                 </cap:VerbasRemuneratorias>
+                <cap:VerbasRemuneratorias>
+                    <cap:Codigo>13</cap:Codigo>
+                    <cap:Nome>IRRF SOBRE SALARIO</cap:Nome>
+                    <cap:EntraNoCalculoDoTetoConstitucional
+                      >1</cap:EntraNoCalculoDoTetoConstitucional>
+                 </cap:VerbasRemuneratorias>
+                <cap:VerbasRemuneratorias>
+                    <cap:Codigo>29</cap:Codigo>
+                    <cap:Nome>PENSAO ALIMENTICIA SALARIO</cap:Nome>
+                    <cap:EntraNoCalculoDoTetoConstitucional
+                      >1</cap:EntraNoCalculoDoTetoConstitucional>
+                 </cap:VerbasRemuneratorias>
+                <cap:VerbasRemuneratorias>
+                    <cap:Codigo>37</cap:Codigo>
+                    <cap:Nome>SALARIO MATERNIDADE</cap:Nome>
+                    <cap:EntraNoCalculoDoTetoConstitucional
+                      >1</cap:EntraNoCalculoDoTetoConstitucional>
+                 </cap:VerbasRemuneratorias>
+                <cap:VerbasRemuneratorias>
+                    <cap:Codigo>39</cap:Codigo>
+                    <cap:Nome>FALTAS (DIAS)</cap:Nome>
+                    <cap:EntraNoCalculoDoTetoConstitucional
+                      >1</cap:EntraNoCalculoDoTetoConstitucional>
+                 </cap:VerbasRemuneratorias>
+                <cap:VerbasRemuneratorias>
+                    <cap:Codigo>45</cap:Codigo>
+                    <cap:Nome>INSS SOBRE FERIAS</cap:Nome>
+                    <cap:EntraNoCalculoDoTetoConstitucional
+                      >1</cap:EntraNoCalculoDoTetoConstitucional>
+                 </cap:VerbasRemuneratorias>
+                <cap:VerbasRemuneratorias>
+                    <cap:Codigo>53</cap:Codigo>
+                    <cap:Nome>LIQUIDO DE FERIAS</cap:Nome>
+                    <cap:EntraNoCalculoDoTetoConstitucional
+                      >1</cap:EntraNoCalculoDoTetoConstitucional>
+                 </cap:VerbasRemuneratorias>
+                <cap:VerbasRemuneratorias>
+                    <cap:Codigo>57</cap:Codigo>
+                    <cap:Nome>SALDO DE SALARIO</cap:Nome>
+                    <cap:EntraNoCalculoDoTetoConstitucional
+                      >1</cap:EntraNoCalculoDoTetoConstitucional>
+                 </cap:VerbasRemuneratorias>
+                <cap:VerbasRemuneratorias>
+                    <cap:Codigo>59</cap:Codigo>
+                    <cap:Nome>13O SALARIO PROPORCIONAL</cap:Nome>
+                    <cap:EntraNoCalculoDoTetoConstitucional
+                      >1</cap:EntraNoCalculoDoTetoConstitucional>
+                 </cap:VerbasRemuneratorias>
+                <cap:VerbasRemuneratorias>
+                    <cap:Codigo>61</cap:Codigo>
+                    <cap:Nome>FERIAS PROPORCIONAIS</cap:Nome>
+                    <cap:EntraNoCalculoDoTetoConstitucional
+                      >1</cap:EntraNoCalculoDoTetoConstitucional>
+                 </cap:VerbasRemuneratorias>
+                <cap:VerbasRemuneratorias>
+                    <cap:Codigo>68</cap:Codigo>
+                    <cap:Nome>INSS SOBRE SALARIO (RESCISAO)</cap:Nome>
+                    <cap:EntraNoCalculoDoTetoConstitucional
+                      >1</cap:EntraNoCalculoDoTetoConstitucional>
+                 </cap:VerbasRemuneratorias>
+                <cap:VerbasRemuneratorias>
+                    <cap:Codigo>69</cap:Codigo>
+                    <cap:Nome>INSS SOBE 13O SAL (RESCISAO)</cap:Nome>
+                    <cap:EntraNoCalculoDoTetoConstitucional
+                      >1</cap:EntraNoCalculoDoTetoConstitucional>
+                 </cap:VerbasRemuneratorias>
+                <cap:VerbasRemuneratorias>
+                    <cap:Codigo>70</cap:Codigo>
+                    <cap:Nome>IRRF SOBRE SALARIO (RESCISAO)</cap:Nome>
+                    <cap:EntraNoCalculoDoTetoConstitucional
+                      >1</cap:EntraNoCalculoDoTetoConstitucional>
+                 </cap:VerbasRemuneratorias>
+                <cap:VerbasRemuneratorias>
+                    <cap:Codigo>72</cap:Codigo>
+                    <cap:Nome>IRRF SOBRE 13O SAL (RESCISAO)</cap:Nome>
+                    <cap:EntraNoCalculoDoTetoConstitucional
+                      >1</cap:EntraNoCalculoDoTetoConstitucional>
+                 </cap:VerbasRemuneratorias>
+                <cap:VerbasRemuneratorias>
+                    <cap:Codigo>73</cap:Codigo>
+                    <cap:Nome>LIQUIDO DE RESCISAO</cap:Nome>
+                    <cap:EntraNoCalculoDoTetoConstitucional
+                      >1</cap:EntraNoCalculoDoTetoConstitucional>
+                 </cap:VerbasRemuneratorias>
+                <cap:VerbasRemuneratorias>
+                    <cap:Codigo>157</cap:Codigo>
+                    <cap:Nome>FERIAS PAGAS MES ANTERIOR</cap:Nome>
+                    <cap:EntraNoCalculoDoTetoConstitucional
+                      >1</cap:EntraNoCalculoDoTetoConstitucional>
+                 </cap:VerbasRemuneratorias>
+                <cap:VerbasRemuneratorias>
+                    <cap:Codigo>158</cap:Codigo>
+                    <cap:Nome>1/3 FERIAS PAGAS MES ANTERIOR</cap:Nome>
+                    <cap:EntraNoCalculoDoTetoConstitucional
+                      >1</cap:EntraNoCalculoDoTetoConstitucional>
+                 </cap:VerbasRemuneratorias>
+                <cap:VerbasRemuneratorias>
+                    <cap:Codigo>159</cap:Codigo>
+                    <cap:Nome>INSS FERIAS MES ANTERIOR</cap:Nome>
+                    <cap:EntraNoCalculoDoTetoConstitucional
+                      >1</cap:EntraNoCalculoDoTetoConstitucional>
+                 </cap:VerbasRemuneratorias>
+                <cap:VerbasRemuneratorias>
+                    <cap:Codigo>167</cap:Codigo>
+                    <cap:Nome>LIQUIDO FERIAS MES ANTERIOR</cap:Nome>
+                    <cap:EntraNoCalculoDoTetoConstitucional
+                      >1</cap:EntraNoCalculoDoTetoConstitucional>
+                 </cap:VerbasRemuneratorias>
+                <cap:VerbasRemuneratorias>
+                    <cap:Codigo>169</cap:Codigo>
+                    <cap:Nome>DIF INSS MULTIPLOS VINC (SAL)</cap:Nome>
+                    <cap:EntraNoCalculoDoTetoConstitucional
+                      >1</cap:EntraNoCalculoDoTetoConstitucional>
+                 </cap:VerbasRemuneratorias>
+                <cap:VerbasRemuneratorias>
+                    <cap:Codigo>220</cap:Codigo>
+                    <cap:Nome>SALARIO AFAST PAGO EMPREGADOR</cap:Nome>
+                    <cap:EntraNoCalculoDoTetoConstitucional
+                      >1</cap:EntraNoCalculoDoTetoConstitucional>
+                 </cap:VerbasRemuneratorias>
+                <cap:VerbasRemuneratorias>
+                    <cap:Codigo>222</cap:Codigo>
+                    <cap:Nome>1/3 FERIAS PROPOR INDENIZADAS</cap:Nome>
+                    <cap:EntraNoCalculoDoTetoConstitucional
+                      >1</cap:EntraNoCalculoDoTetoConstitucional>
+                 </cap:VerbasRemuneratorias>
+                <cap:VerbasRemuneratorias>
+                    <cap:Codigo>253</cap:Codigo>
+                    <cap:Nome>IRRF DESCONTADO NAS FERIAS</cap:Nome>
+                    <cap:EntraNoCalculoDoTetoConstitucional
+                      >1</cap:EntraNoCalculoDoTetoConstitucional>
+                 </cap:VerbasRemuneratorias>
+                <cap:VerbasRemuneratorias>
+                    <cap:Codigo>270</cap:Codigo>
+                    <cap:Nome>FERIAS NO MES</cap:Nome>
+                    <cap:EntraNoCalculoDoTetoConstitucional
+                      >1</cap:EntraNoCalculoDoTetoConstitucional>
+                 </cap:VerbasRemuneratorias>
+                <cap:VerbasRemuneratorias>
+                    <cap:Codigo>271</cap:Codigo>
+                    <cap:Nome>1/3 DE FERIAS NO MES</cap:Nome>
+                    <cap:EntraNoCalculoDoTetoConstitucional
+                      >1</cap:EntraNoCalculoDoTetoConstitucional>
+                 </cap:VerbasRemuneratorias>
+                
+</cap:CadastroVerbasRemuneratorias>
