@@ -1,6 +1,3 @@
-require 'xsd_populator'
-require_relative 'portal_core'
-
 def run_xml_verbas(worksheet)
   begin
     template_path = File.join(
@@ -48,7 +45,10 @@ def run_xml_verbas(worksheet)
               filename: 'UNIVESP.xml',
               type: 'Application/octet-stream'
   rescue => e
-    puts e.message
-    puts e.backtrace
+    File.open('exceptions.log','a') do |file|
+      file << "#{Time.now.strftime('%FT%T%:z')}
+                \n\t#{e.message}
+                \n\t#{e.backtrace}"
+    end
   end
 end
