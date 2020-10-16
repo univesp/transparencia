@@ -1,98 +1,154 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
 
-  <title>Portal da Transparência</title>
+  <title>Apps Univesp | Transparência</title>
 
-  <!-- Bootstrap -->
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/checkout/">
 
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
 
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
+
+  <!-- Custom styles for this template -->
+  <style>
+    .container {
+      max-width: 960px;
+    }
+
+    .border-top { border-top: 1px solid #e5e5e5; }
+    .border-bottom { border-bottom: 1px solid #e5e5e5; }
+    .border-top-gray { border-top-color: #adb5bd; }
+
+    .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
+    .lh-condensed { line-height: 1.25; }
+
+  </style>
 </head>
-<body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-    <div class="container">
-      Portal da Transparência
-    </div>
-  </nav>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center">
-        <h1 class="mt-5">
-          Conversor de arquivo para o Portal da Transparência
-        </h1>
+<body class="bg-light">
 
-        <form action="<%= url('/upload') %>"
-              method="post"
-              enctype="multipart/form-data"
-              style="text-align: justify">
+<div class="container">
+  <div class="py-5 text-center">
+    <img class="d-block mx-auto mb-4" src="logo-univesp.png" alt=""
+         width="72"
+         height="72">
+    <h2>Transparência</h2>
+    <p class="lead">
+      Solução para conversão dos dados de transparência nos formatos esperados
+      pelos integradores dos órgãos de controle, como os da PRODESP (Decreto nº
+      52.624, de 15/01/08, ou "Portal da Transparência") e da AUDESP (TCE-SP).
+    </p>
+  </div>
 
-          <br>
-          <p class="lead">
+  <div class="row">
+
+    <div class="col-md-12 order-md-1">
+      <form action="<%= url('/upload') %>"
+            method="post"
+            enctype="multipart/form-data"
+            class="needs-validation"
+            novalidate="">
+
+        <div class="mb-3">
+          <label for="username">
             1) Preencha a planilha mensal, conforme
-            <a href="https://docs.google.com/spreadsheets/d/1DcHqUkQzproT1b7rI_i-LPVRv71NVnlNlGdFStgb0_k/edit#gid=1104760182"
-               target="_blank">
+            <a target="_blank"
+               href="https://docs.google.com/spreadsheets/d/1fjuEvQO5CSgLd5Pje6etio44uniPv03kzQsB4Gtyu2g/edit?usp=sharing">
               exemplo
             </a>
-          </p>
-          <p><strong>
-            Atenção ao preenchimento do campo "Data de Referência" (coluna "E") da aba "HEADER" da planilha.
-            Ela deve sempre refletir o mês de referência, no formato "aaaamm", em que "a" é o ano com 4 dígitos e "m" o mês' com 2 dígitos.
-            Exemplo: "202004" se refere a abril de 2020.</strong>
-          </p>
+          </label>
+        </div>
 
-          <br>
-          <p class="lead">
-            2) Carregue a planilha no campo abaixo (apenas arquivos .XLSX):
-          </p>
-          <br>
-          <input type="file" name="file">
-
-
-          <br>
-          <p class="lead">
-            3) Selecione o tipo de arquivo que deve ser gerado
-          </p>
-
-          <select class="form-control" name="conversion_type">
-            <option value="txt_portal">TXT do Portal da Transparência</option>
-            <option value="xml_verbas">XML de Cadastro de Verbas Remuneratórias (AUDESP)</option>
-            <option value="xml_folha_ordinaria">XML de Folha Ordinária (AUDESP)
-            </option>
-            <option value="xml_pagamento_folha_ordinaria">XML de Pagamento da
-              Folha Ordinária (AUDESP)
-            </option>
-          </select>
-
-          <br>
-          <p class="lead">
-            4) Clique em "Converter" e aguarde o download.
-          </p>
-          <br>
-          <div class="mt-3">
-            <button type="submit" class="btn btn-primary">Converter</button>
+        <div class="mb-3">
+          <label for="file">
+            2) Carregue a planilha mensal
+          </label>
+          <div class="input-group">
+            <input type="file" name="file" class="form-control"
+                   required="">
+            <div class="invalid-feedback" style="width: 100%;">
+              Por favor, carregue a planilha
+            </div>
           </div>
-        </form>
-      </div>
+          <small class="text-muted">Apenas arquivos .xlsx</small>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 mb-3">
+            <label for="conversion_type">
+              3) Selecione o tipo de arquivo que deve ser gerado
+            </label>
+            <select class="custom-select d-block w-100"
+                    id="country"
+                    name="conversion_type"
+                    required="">
+              <option value="">Selecione...</option>
+              <option value="txt_portal">TXT do Portal da Transparência</option>
+              <option value="xml_verbas">XML de Cadastro de Verbas Remuneratórias (AUDESP)</option>
+              <option value="xml_folha_ordinaria">XML de Folha Ordinária (AUDESP)
+              </option>
+              <option value="xml_pagamento_folha_ordinaria">
+                XML de Pagamento da Folha Ordinária (AUDESP)
+              </option>
+            </select>
+            <div class="invalid-feedback">
+              Por favor, selecione uma opção
+            </div>
+          </div>
+        </div>
+
+        <hr class="mb-4">
+
+        <button class="btn btn-primary btn-lg btn-block" type="submit">
+          Converter
+        </button>
+      </form>
     </div>
   </div>
 
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-</body>
-</html>
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">2020 Univesp -
+      <a target=_blank
+         href="https://github.com/univesp/transparencia">GitHub</a></p>
+  </footer>
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+<script src="../../assets/js/vendor/popper.min.js"></script>
+<script src="../../dist/js/bootstrap.min.js"></script>
+<script src="../../assets/js/vendor/holder.min.js"></script>
+<script>
+  // Example starter JavaScript for disabling form submissions if there are invalid fields
+  (function() {
+    'use strict';
+
+    window.addEventListener('load', function() {
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.getElementsByClassName('needs-validation');
+
+      // Loop over them and prevent submission
+      var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    }, false);
+  })();
+</script>
+
+
+</body></html>
