@@ -4,4 +4,6 @@
 .idea/
 
 output.txt
+output.xml
+
 exceptions.log
