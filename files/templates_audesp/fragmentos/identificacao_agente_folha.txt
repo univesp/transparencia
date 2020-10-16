@@ -1,0 +1,15 @@
+<pfo:IdentificacaoAgentePublico>
+  <pfo:CPF Tipo="02">
+    <gen:Numero>[CPF]</gen:Numero>
+  </pfo:CPF>
+  <pfo:MunicipioLotacao>[MUNICIPIO]</pfo:MunicipioLotacao>
+  <pfo:EntidadeLotacao>[ENTIDADE]</pfo:EntidadeLotacao>
+  <pfo:formaPagamento>[FORMA_PAGAMENTO]</pfo:formaPagamento>
+  <pfo:numeroBanco>[NUMERO_BANCO]</pfo:numeroBanco>
+  <pfo:agencia>[AGENCIA]</pfo:agencia>
+  <pfo:ContaCorrente>[CONTA_CORRENTE]</pfo:ContaCorrente>
+  <pfo:Valores>
+    <pfo:valorPagoContaCorrente>[PAGO_CC]</pfo:valorPagoContaCorrente>
+    <pfo:valorPagoOutrasFormas>[PAGO_OUTROS]</pfo:valorPagoOutrasFormas>
+  </pfo:Valores>
+</pfo:IdentificacaoAgentePublico>

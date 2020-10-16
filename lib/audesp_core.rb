@@ -94,7 +94,7 @@ def run_xml_folha_ordinaria(worksheet)
       end if person_financial_data.size > 0
 
       items += template_agent
-                 .gsub('[CPF]',"#{row[24].to_s.strip}#{row[25].to_s.strip}")
+                 .gsub('[CPF]', mount_cpf(row))
                  .gsub('[NOME]',"#{row[13].to_s.strip}")
                  .gsub('[MUNICIPIO]',"#{row[146].to_s.strip}")
                  .gsub('[ENTIDADE]',"#{row[147].to_s.strip}")
@@ -120,11 +120,9 @@ def run_xml_folha_ordinaria(worksheet)
                                                    .split('-')[0]
                                                    .to_s
                                                    .strip}")
-                 .gsub('[REMUNERACAO_BRUTA]',"#{((row[131].to_f).fdiv(100)).to_s
-                 }")
-                 .gsub('[DESCONTOS]',"#{((row[132].to_f).fdiv(100)).to_s}")
-                 .gsub('[REMUNERACAO_LIQUIDA]',"#{((row[133].to_f).fdiv(100))
-                                                      .to_s}")
+                 .gsub('[REMUNERACAO_BRUTA]',"#{float_from_text(row[131])}")
+                 .gsub('[DESCONTOS]',"#{float_from_text(row[132])}")
+                 .gsub('[REMUNERACAO_LIQUIDA]',"#{float_from_text(row[133])}")
                  .gsub('[VERBAS]',remuneration)
 
 
@@ -152,6 +150,66 @@ def run_xml_folha_ordinaria(worksheet)
   rescue => e
     puts e.message
     puts e.backtrace
+  end
+end
+
+def run_xml_pagamento_folha_ordinaria(worksheet)
+  begin
+    template_folha_ordinaria = File.read(
+      File.join(ROOT_PATH, 'pagamento_folha_ordinaria.txt')
+    )
+    fragment_identificacao_agente = File.read(
+      File.join(ROOT_PATH, 'fragmentos/identificacao_agente_folha.txt')
+    )
+
+    agents = ''
+    personal_data_sheet = worksheet.sheets[2]
+    personal_data_sheet.rows.each_with_index do |row, index|
+      next if index == 0 # pula o cabeçalho
+      break if row[2].to_s.empty? # evita as linhas em branco
+
+      ## Forma de pagamento
+      # 1 - Conta corrente;2 - Demais;3 - Ambas
+
+      agents += fragment_identificacao_agente
+                  .gsub('[CPF]', mount_cpf(row))
+                  .gsub('[FORMA_PAGAMENTO]',"#{first_from_split(row[156])}")
+                  .gsub('[NUMERO_BANCO]',"#{row[157].to_s.strip}")
+                  .gsub('[AGENCIA]',"#{row[158].to_s.strip}")
+                  .gsub('[CONTA_CORRENTE]',"#{row[159].to_s.strip}")
+                  .gsub('[PAGO_CC]',"#{float_from_text(row[160])}")
+                  .gsub('[PAGO_OUTROS]',"#{float_from_text(row[161])}")
+                  .gsub('[MUNICIPIO]', MUNICIPIO.to_s)
+                  .gsub('[ENTIDADE]', ENTIDADE.to_s)
+    end
+
+    header_sheet = worksheet.sheets[0]
+    header_row = header_sheet.rows[1] # o cabeçalho é a linha zero
+
+    template_folha_ordinaria.gsub! '[MUNICIPIO]', MUNICIPIO.to_s
+    template_folha_ordinaria.gsub! '[ENTIDADE]', ENTIDADE.to_s
+    template_folha_ordinaria.gsub! '[ANO_EXERCICIO]',
+                                   header_row[20].to_i.to_s.strip
+    template_folha_ordinaria.gsub! '[MES_EXERCICIO]',
+                                   header_row[21].to_i.to_s.strip
+    template_folha_ordinaria.gsub! '[DATA_CRIACAO]',
+                                   Time.now.strftime('%F')
+    # TODO: verificar se ano/mês de pagamento é o mesmo do exercício
+    template_folha_ordinaria.gsub! '[ANO_PAGAMENTO]',
+                                   header_row[20].to_i.to_s.strip
+    template_folha_ordinaria.gsub! '[MES_PAGAMENTO]',
+                                   header_row[21].to_i.to_s.strip
+    template_folha_ordinaria.gsub! '[IDENTIFICACAO_AGENTES]', agents
+
+
+    File.open('output.xml','w') do |file|
+      file.write template_folha_ordinaria
+    end
+
+    send_file "output.xml",
+              filename: 'UNIVESP.xml',
+              type: 'Application/octet-stream'
+  rescue => e
   end
 end
 
@@ -208,4 +266,29 @@ def run_xml_verbas(worksheet)
                 \n\t#{e.backtrace}"
     end
   end
+end
+
+
+
+###
+# Obtem a primeira parte do texto com separador de uma célula.
+def first_from_split(cell)
+  cell.to_s
+    .split('-')[0]
+    .to_s
+    .strip
+end
+
+###
+# Converte os valores vindos da planilha do Portal sem separador de decimal e
+# os formata de acordo com o padrão da AUDESP.
+def float_from_text(cell)
+  '%.2f' % (cell.to_f).fdiv(100)
+end
+
+###
+# Monta o CPF o qual consta na planilha do Portal em duas células: número
+# (coluna 24) e controle (coluna 25).
+def mount_cpf(row)
+  "#{row[24].to_s.strip}#{row[25].to_s.strip}"
 end

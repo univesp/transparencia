@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<pfo:PagamentoFolhaOrdinariaAgentePublico xsi:schemaLocation="http://www.tce.sp.gov.br/audesp/xml/remuneracao ../folhaordinaria/AUDESP_PAGAMENTO_FOLHA_ORDINARIA_AGENTE_PUBLICO_2020_A.XSD" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pfo="http://www.tce.sp.gov.br/audesp/xml/remuneracao" xmlns:gen="http://www.tce.sp.gov.br/audesp/xml/generico" xmlns:ap="http://www.tce.sp.gov.br/audesp/xml/atospessoal">
+  <pfo:Descritor>
+    <gen:AnoExercicio>[ANO_EXERCICIO]</gen:AnoExercicio>
+    <gen:TipoDocumento>Pagamento de Folha Ordinária</gen:TipoDocumento>
+    <gen:Entidade>[ENTIDADE]</gen:Entidade>
+    <gen:Municipio>[MUNICIPIO]</gen:Municipio>
+    <gen:DataCriacaoXML>[DATA_CRIACAO]</gen:DataCriacaoXML>
+    <gen:MesExercicio>[MES_EXERCICIO]</gen:MesExercicio>
+  </pfo:Descritor>
+  <pfo:AnoPagamento>[ANO_PAGAMENTO]</pfo:AnoPagamento>
+  <pfo:MesPagamento>[MES_PAGAMENTO]</pfo:MesPagamento>
+  [IDENTIFICACAO_AGENTES]
+</pfo:PagamentoFolhaOrdinariaAgentePublico>
