@@ -139,13 +139,8 @@ def run_xml_folha_ordinaria(worksheet)
     template_master.gsub! '[DATA_CRIACAO]', Time.now.strftime('%F')
     template_master.gsub! '[IDENTIFICACAO_AGENTE]', items
 
-    File.open('output.xml','w') do |file|
-      file.write template_master
-    end
-
-    send_file "output.xml",
-              filename: 'UNIVESP.xml',
-              type: 'Application/octet-stream'
+    save_and_send_file template_master,
+                       :folha_ordinaria
 
   rescue => e
     puts e.message
@@ -202,13 +197,8 @@ def run_xml_pagamento_folha_ordinaria(worksheet)
     template_folha_ordinaria.gsub! '[IDENTIFICACAO_AGENTES]', agents
 
 
-    File.open('output.xml','w') do |file|
-      file.write template_folha_ordinaria
-    end
-
-    send_file "output.xml",
-              filename: 'UNIVESP.xml',
-              type: 'Application/octet-stream'
+    save_and_send_file template_folha_ordinaria,
+                  :pagamento_folha_ordinaria
   rescue => e
   end
 end
@@ -252,13 +242,8 @@ def run_xml_verbas(worksheet)
     template.gsub! '[TIPO_DOCUMENTO]',
                    'Cadastro de Verbas Remuneratórias'
 
-    File.open('output.xml','w') do |file|
-      file.write template
-    end
-
-    send_file "output.xml",
-              filename: 'UNIVESP.xml',
-              type: 'Application/octet-stream'
+    save_and_send_file template,
+                :verbas_remuneratorias
   rescue => e
     File.open('exceptions.log','a') do |file|
       file << "#{Time.now.strftime('%FT%T%:z')}
@@ -268,7 +253,7 @@ def run_xml_verbas(worksheet)
   end
 end
 
-
+# --- AUXILIARES --- #
 
 ###
 # Obtem a primeira parte do texto com separador de uma célula.
@@ -291,4 +276,25 @@ end
 # (coluna 24) e controle (coluna 25).
 def mount_cpf(row)
   "#{row[24].to_s.strip}#{row[25].to_s.strip}"
+end
+
+###
+# Salva um arquivo físico e o oferece para download no browser
+def save_and_send_file(file_content, origin)
+  file_name = case origin
+              when :folha_ordinaria
+                'UNIVESP_Folha_Ordinaria.xml'
+              when :pagamento_folha_ordinaria
+                'UNIVESP_Pagamento_Folha_Ordinaria.xml'
+              when :verbas_remuneratorias
+                'UNIVESP_Verbas_Remuneratorias.xml'
+              end
+
+  File.open(file_name, 'w') do |file|
+    file.write file_content
+  end
+
+  send_file "output.xml",
+            filename: 'UNIVESP.xml',
+            type: 'Application/octet-stream'
 end

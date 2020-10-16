@@ -39,7 +39,8 @@ def run_txt_portal(worksheet)
              hash_financial_data, hash_job_data, hash_maturities_data,
              hash_salary_range_data, hash_unit_data)
 
-  send_file "output.txt", :filename => 'UNIVESP.txt', :type => 'Application/octet-stream'
+  send_file "output.txt", :filename => 'UNIVESP_Portal.txt', :type =>
+      'Application/octet-stream'
 end
 
 # Reads the data in the "Detalhe - ENCARGOS SOCIAIS  BEN" tab of worksheet and
