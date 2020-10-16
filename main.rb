@@ -8,7 +8,7 @@ get '/' do
   erb :index
 end
 
-post '/upload' do
+def upload
   file = params[:file]
   conversion_type = params[:conversion_type]
 
@@ -36,4 +36,12 @@ post '/upload' do
           </p><br>
           <a href=\"/portal-da-transparencia\">Voltar</a>") unless file
   end
+end
+
+post '/upload' do
+  return upload
+end
+
+post '/transparencia/upload' do
+  return upload
 end
