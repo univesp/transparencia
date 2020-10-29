@@ -1,11 +1,18 @@
 require 'sinatra'
+require 'sinatra/basic_auth'
 require 'simple_xlsx_reader'
 require 'cgi'
+require 'yaml'
 require_relative 'lib/audesp_core'
 require_relative 'lib/portal_core'
 
-get '/' do
-  erb :index
+authorize do |username, password|
+  users = YAML.load(File.read('files/users/users.yml'))
+  current_user = users.select { |u|
+    u['username'].to_s == username.to_s &&
+    u['password'].to_s == password.to_s
+  }
+  current_user.size == 1
 end
 
 def upload
@@ -38,10 +45,16 @@ def upload
   end
 end
 
-post '/upload' do
-  return upload
-end
+protect do
+  get '/' do
+    erb :index
+  end
 
-post '/transparencia/upload' do
-  return upload
+  post '/upload' do
+    return upload
+  end
+
+  post '/transparencia/upload' do
+    return upload
+  end
 end

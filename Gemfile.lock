@@ -19,6 +19,8 @@ GEM
       rack (~> 2.2)
       rack-protection (= 2.1.0)
       tilt (~> 2.0)
+    sinatra-basic-auth (0.1.0)
+      sinatra
     tilt (2.0.10)
 
 PLATFORMS
@@ -27,6 +29,7 @@ PLATFORMS
 DEPENDENCIES
   simple_xlsx_reader
   sinatra
+  sinatra-basic-auth
 
 BUNDLED WITH
    2.1.4

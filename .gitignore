@@ -3,7 +3,9 @@
 
 .idea/
 
-output.txt
-output.xml
+*.txt
+*.xml
 
 exceptions.log
+
+users.yml

@@ -295,6 +295,6 @@ def save_and_send_file(file_content, origin)
   end
 
   send_file "output.xml",
-            filename: 'UNIVESP.xml',
+            filename: file_name,
             type: 'Application/octet-stream'
 end
