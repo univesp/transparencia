@@ -221,13 +221,11 @@ def run_xml_verbas(worksheet)
       break if row[5].to_s.empty? # prevents empty lines
 
       calculate_bool = row[11].to_s.split('-')[0].strip
-      items += "<cap:VerbasRemuneratorias>
-                    <cap:Codigo>#{row[5].to_i.to_s.strip}</cap:Codigo>
-                    <cap:Nome>#{row[6].to_s.strip}</cap:Nome>
-                    <cap:EntraNoCalculoDoTetoConstitucional
-                      >#{calculate_bool}</cap:EntraNoCalculoDoTetoConstitucional>
-                 </cap:VerbasRemuneratorias>
-                "
+      items += "<cvr:VerbasRemuneratorias>
+                    <cvr:Codigo>#{row[5].to_i.to_s.strip}</cvr:Codigo>
+                    <cvr:Nome>#{row[6].to_s.strip}</cvr:Nome>
+                    <cvr:EntraNoCalculoDoTetoConstitucional>#{calculate_bool}</cvr:EntraNoCalculoDoTetoConstitucional>
+                 </cvr:VerbasRemuneratorias>"
     end
 
     header_sheet = worksheet.sheets[0]
@@ -290,11 +288,11 @@ def save_and_send_file(file_content, origin)
                 'UNIVESP_Verbas_Remuneratorias.xml'
               end
 
-  File.open(file_name, 'w') do |file|
+  File.open(file_name, 'w:ISO-8859-1') do |file|
     file.write file_content
   end
 
-  send_file "output.xml",
+  send_file file_name,
             filename: file_name,
             type: 'Application/octet-stream'
 end
