@@ -208,6 +208,43 @@ def run_xml_pagamento_folha_ordinaria(worksheet)
   end
 end
 
+def run_xml_resumo_mensal(worksheet)
+  begin
+    template = File.read(
+      File.join(ROOT_PATH, 'resumo_mensal.txt')
+    )
+
+    charges_sheet = worksheet.sheets[1]
+    row = charges_sheet.rows[1] # o cabeçalho é a linha zero
+
+    template.gsub! '[MUNICIPIO]', row[66].to_i.to_s.strip
+    template.gsub! '[COD_MUNICIPIO]', row[66].to_i.to_s.strip
+    template.gsub! '[ENTIDADE]', row[67].to_i.to_s.strip
+    template.gsub! '[COD_ENTIDADE]', row[67].to_i.to_s.strip
+    template.gsub! '[FGTS]', float_from_text(row[68])
+    template.gsub! '[GERAL_AG_POLITICO]', float_from_text(row[69])
+    template.gsub! '[PROPRIO_AG_POLITICO]', float_from_text(row[70])
+    template.gsub! '[GERAL_AG_NAO_POLITICO]', float_from_text(row[71])
+    template.gsub! '[PROPRIO_AG_NAO_POLITICO]', float_from_text(row[72])
+  
+    template.gsub! '[DATA_CRIACAO]', Time.now.strftime('%F')
+
+    header_sheet = worksheet.sheets[0]
+    header_row = header_sheet.rows[1] # o cabeçalho é a linha zero
+
+    template.gsub! '[ANO_EXERCICIO]', header_row[20].to_i.to_s.strip
+    template.gsub! '[MES_EXERCICIO]', header_row[21].to_i.to_s.strip
+   
+    save_and_send_file template, :resumo_mensal
+  rescue => e
+    File.open('exceptions.log','a') do |file|
+      file << "#{Time.now.strftime('%FT%T%:z')}
+                \n\t#{e.message}
+                \n\t#{e.backtrace}"
+    end
+  end
+end
+
 def run_xml_verbas(worksheet)
   begin
     template_path = File.join(
@@ -289,6 +326,8 @@ def save_and_send_file(file_content, origin)
                 'UNIVESP_Folha_Ordinaria'
               when :pagamento_folha_ordinaria
                 'UNIVESP_Pagamento_Folha_Ordinaria'
+              when :resumo_mensal
+                'UNIVESP_Resumo_Mensal'
               when :verbas_remuneratorias
                 'UNIVESP_Verbas_Remuneratorias'
               end
