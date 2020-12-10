@@ -221,11 +221,11 @@ def run_xml_verbas(worksheet)
       break if row[5].to_s.empty? # prevents empty lines
 
       calculate_bool = row[11].to_s.split('-')[0].strip
-      items += "<cvr:VerbasRemuneratorias>
-                    <cvr:Codigo>#{row[5].to_i.to_s.strip}</cvr:Codigo>
-                    <cvr:Nome>#{row[6].to_s.strip}</cvr:Nome>
-                    <cvr:EntraNoCalculoDoTetoConstitucional>#{calculate_bool}</cvr:EntraNoCalculoDoTetoConstitucional>
-                 </cvr:VerbasRemuneratorias>"
+      items += "\t<cap:VerbasRemuneratorias>\n"
+      items += "\t<cap:Codigo>#{row[5].to_i.to_s.strip}</cap:Codigo>\n"
+      items += "\t<cap:Nome>#{row[6].to_s.strip}</cap:Nome>\n"
+      items += "\t<cap:EntraNoCalculoDoTetoConstitucional>#{calculate_bool}</cap:EntraNoCalculoDoTetoConstitucional>\n"
+      items += "\t</cap:VerbasRemuneratorias>\n"
     end
 
     header_sheet = worksheet.sheets[0]
@@ -281,18 +281,20 @@ end
 def save_and_send_file(file_content, origin)
   file_name = case origin
               when :folha_ordinaria
-                'UNIVESP_Folha_Ordinaria.xml'
+                'UNIVESP_Folha_Ordinaria'
               when :pagamento_folha_ordinaria
-                'UNIVESP_Pagamento_Folha_Ordinaria.xml'
+                'UNIVESP_Pagamento_Folha_Ordinaria'
               when :verbas_remuneratorias
-                'UNIVESP_Verbas_Remuneratorias.xml'
+                'UNIVESP_Verbas_Remuneratorias'
               end
 
-  File.open(file_name, 'w:ISO-8859-1') do |file|
+  file_name = "#{file_name}_#{Time.now.strftime('%Y%m%d%H%M%S')}.xml"
+  file_path = "outputs/#{file_name}"
+  File.open(file_path, 'w:ISO-8859-1') do |file|
     file.write file_content
   end
 
-  send_file file_name,
+  send_file file_path,
             filename: file_name,
             type: 'Application/octet-stream'
 end
