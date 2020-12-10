@@ -163,6 +163,9 @@ def run_xml_pagamento_folha_ordinaria(worksheet)
     personal_data_sheet = worksheet.sheets[2]
     personal_data_sheet.rows.each_with_index do |row, index|
       next if index == 0 # pula o cabeçalho
+      # pula a linha se o campo "AUDESP - considerar" (coluna FG)
+      # estiver com o valor "2 - NÃO"
+      next if row[162].to_s.split('-')[0].to_s.strip == '2'
       break if row[2].to_s.empty? # evita as linhas em branco
 
       ## Forma de pagamento
