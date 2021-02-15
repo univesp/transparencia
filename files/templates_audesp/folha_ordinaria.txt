@@ -4,7 +4,7 @@
     xmlns:foap="http://www.tce.sp.gov.br/audesp/xml/remuneracao"
     xmlns:gen="http://www.tce.sp.gov.br/audesp/xml/generico" 
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-    xsi:schemaLocation="http://www.tce.sp.gov.br/audesp/xml/remuneracao ./folhaOrdinaria/AUDESP_FOLHA_ORDINARIA_AGENTE_PUBLICO_2020_A.XSD">
+    xsi:schemaLocation="http://www.tce.sp.gov.br/audesp/xml/remuneracao ./folhaOrdinaria/AUDESP_FOLHA_ORDINARIA_AGENTE_PUBLICO_2021_A.XSD">
   <foap:Descritor>
     <gen:AnoExercicio>[ANO_EXERCICIO]</gen:AnoExercicio>
     <gen:TipoDocumento>Folha Ordinária</gen:TipoDocumento>

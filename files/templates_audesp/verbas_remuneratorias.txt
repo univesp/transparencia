@@ -4,7 +4,7 @@
   xmlns:aux="http://www.tce.sp.gov.br/audesp/xml/auxiliar"
   xmlns:cap="http://www.tce.sp.gov.br/audesp/xml/remuneracao"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.tce.sp.gov.br/audesp/xml/remuneracao ../verbasremuneratorias/AUDESP_VERBAS_REMUNERATORIAS_2020_A.XSD">
+  xsi:schemaLocation="http://www.tce.sp.gov.br/audesp/xml/remuneracao ../verbasremuneratorias/AUDESP_VERBAS_REMUNERATORIAS_2021_A.XSD">
   <cap:Descritor>
     <gen:AnoExercicio>[ANO_EXERCICIO]</gen:AnoExercicio>
     <gen:TipoDocumento>[TIPO_DOCUMENTO]</gen:TipoDocumento>

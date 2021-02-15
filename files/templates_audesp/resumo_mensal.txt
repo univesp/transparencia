@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<rem:ResumoMensalFolhaPagamento xsi:schemaLocation="http://www.tce.sp.gov.br/audesp/xml/remuneracao ../remuneracao/AUDESP_RESUMO_MENSAL_FOLHA_PAGAMENTO_2020_A.XSD" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rem="http://www.tce.sp.gov.br/audesp/xml/remuneracao" xmlns:aux="http://www.tce.sp.gov.br/audesp/xml/auxiliar" xmlns:ap="http://www.tce.sp.gov.br/audesp/xml/atospessoal" xmlns:gen="http://www.tce.sp.gov.br/audesp/xml/generico">
+<rem:ResumoMensalFolhaPagamento xsi:schemaLocation="http://www.tce.sp.gov.br/audesp/xml/remuneracao ../remuneracao/AUDESP_RESUMO_MENSAL_FOLHA_PAGAMENTO_2021_A.XSD" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rem="http://www.tce.sp.gov.br/audesp/xml/remuneracao" xmlns:aux="http://www.tce.sp.gov.br/audesp/xml/auxiliar" xmlns:ap="http://www.tce.sp.gov.br/audesp/xml/atospessoal" xmlns:gen="http://www.tce.sp.gov.br/audesp/xml/generico">
   <rem:Descritor>
     <gen:AnoExercicio>[ANO_EXERCICIO]</gen:AnoExercicio>
     <gen:TipoDocumento>Resumo Mensal da Folha de Pagamento</gen:TipoDocumento>
