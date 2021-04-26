@@ -5,6 +5,7 @@ require 'cgi'
 require 'yaml'
 require_relative 'lib/audesp_core'
 require_relative 'lib/portal_core'
+require_relative 'lib/iamspe_core'
 
 authorize do |username, password|
   users = YAML.load(File.read('files/users/users.yml'))
@@ -38,6 +39,8 @@ def upload
       run_xml_pagamento_folha_ordinaria worksheet
     when 'xml_resumo_mensal'
       run_xml_resumo_mensal worksheet
+    when 'txt_iamspe'
+      run_txt_iamspe worksheet
     end
   else
     return CGI.unescape("<p>
