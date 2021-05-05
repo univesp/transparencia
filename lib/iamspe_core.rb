@@ -15,7 +15,7 @@ IDENT_UO='46'.freeze
 
 def run_txt_iamspe(worksheet)
   File.open('output.txt', 'w') do |f|
-    f.write personal_data worksheet.sheets[2]
+    f.write personal_data_iamspe worksheet.sheets[2]
   end
 
   send_file "output.txt",
@@ -23,7 +23,7 @@ def run_txt_iamspe(worksheet)
             type: 'Application/octet-stream'
 end
 
-def personal_data(sheet)
+def personal_data_iamspe(sheet)
   content = ''
   sheet.rows.each_with_index do |row, index|
     next if index == 0 # cabeçalho
