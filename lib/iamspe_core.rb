@@ -31,7 +31,7 @@ def personal_data_iamspe(sheet)
     next if index == 0 # cabeçalho
 
     # IAMSPE - ADERIU?
-    next if row[164].to_s != '1 - SIM' # pula a linha se a opção
+    next if row[163].to_s != '1 - SIM' # pula a linha se a opção
     # IAMSPE - ADERIU?  diferente de "1 - SIM"
 
     line = ''
@@ -67,22 +67,22 @@ def personal_data_iamspe(sheet)
     line += "#{row[14]}".pad_with_right_spaces! 8 # [O]
 
     # POP_CAR a2
-    line += "#{row[165]}".pad_with_right_spaces! 2 # [FJ]
+    line += "#{row[164]}".pad_with_right_spaces! 2 # [FJ]
 
     # COD_SITUA_FUNCIO a2
-    line += "#{row[166]}".pad_with_right_spaces! 2 # [FK]
+    line += "#{row[165]}".pad_with_right_spaces! 2 # [FK]
 
     # MOTIVO_SITUA_FUNCIO n3
-    line += "#{row[167]}".pad_with_right_spaces! 3 # [FL]
+    line += "#{row[166]}".pad_with_right_spaces! 3 # [FL]
 
     # DAT_INIC_SITUA_FUNCIO n8
     line += "#{row[61]}".pad_with_right_spaces! 8 # [BJ]
 
     # VD_IAMSPE n15
-    line += "#{comma_for_currencies row[168]}".pad_with_right_spaces! 15 # [FM]
+    line += "#{comma_for_currencies row[167]}".pad_with_right_spaces! 15 # [FM]
 
     # VD_AGREGADO n15
-    line += "#{comma_for_currencies row[169]}".pad_with_right_spaces! 15 # [FM]
+    line += "#{comma_for_currencies row[168]}".pad_with_right_spaces! 15 # [FM]
 
     # IDENT_ENTID a1
     line += IDENT_ENTID.pad_with_right_spaces! 1 # [FN]
@@ -100,28 +100,28 @@ def personal_data_iamspe(sheet)
     line += IDENT_UO.pad_with_right_spaces! 3
 
     # VD_FÉRIAS n15
-    line += "#{comma_for_currencies row[170]}".pad_with_right_spaces! 15 # [FO]
+    line += "#{comma_for_currencies row[169]}".pad_with_right_spaces! 15 # [FO]
 
     # VD_PARCELAMENTO n15
-    line += "#{comma_for_currencies row[171]}".pad_with_right_spaces! 15 # [FP]
+    line += "#{comma_for_currencies row[170]}".pad_with_right_spaces! 15 # [FP]
 
     # VD_RESERVA n15
-    line += "#{comma_for_currencies row[172]}".pad_with_right_spaces! 15 # [FQ]
+    line += "#{comma_for_currencies row[171]}".pad_with_right_spaces! 15 # [FQ]
 
     # VD_IAMSPE_LEI_11456 n15
-    line += "#{comma_for_currencies row[173]}".pad_with_right_spaces! 15 # [FR]
+    line += "#{comma_for_currencies row[172]}".pad_with_right_spaces! 15 # [FR]
 
     # VD_AGREGADOS_LEI_11456 n15
-    line += "#{comma_for_currencies row[174]}".pad_with_right_spaces! 15 # [FS]
+    line += "#{comma_for_currencies row[173]}".pad_with_right_spaces! 15 # [FS]
 
     # VD_FÉRIAS_LEI_11456 n15
-    line += "#{comma_for_currencies row[175]}".pad_with_right_spaces! 15 # [FT]
+    line += "#{comma_for_currencies row[174]}".pad_with_right_spaces! 15 # [FT]
 
     # VD_AFAST_IAMSPE_CEETEPS n15
-    line += "#{comma_for_currencies row[176]}".pad_with_right_spaces! 15 # [FU]
+    line += "#{comma_for_currencies row[175]}".pad_with_right_spaces! 15 # [FU]
 
     # VD_AGREG_IAMSPE_CEETEPS n15
-    line += "#{comma_for_currencies row[177]}".pad_with_right_spaces! 15 # [FV]
+    line += "#{comma_for_currencies row[176]}".pad_with_right_spaces! 15 # [FV]
 
     # IDENT_MUNICIPIO n5
     line += ''.pad_with_right_spaces! 5
@@ -176,94 +176,94 @@ def personal_data_iamspe(sheet)
     line += "#{row[37]}".pad_with_right_spaces! 30 # [AL]
 
     # VD_IAMSPE_SPPREV_070127 n15
-    line += "#{comma_for_currencies row[178]}".pad_with_right_spaces! 15 # [FW]
+    line += "#{comma_for_currencies row[177]}".pad_with_right_spaces! 15 # [FW]
 
     # VD_IAMSPE_SPPREV_700062 n15
-    line += "#{comma_for_currencies row[179]}".pad_with_right_spaces! 15 # [FX]
+    line += "#{comma_for_currencies row[178]}".pad_with_right_spaces! 15 # [FX]
 
     # VD_IAMSPE_SPPREV_700371 n15
-    line += "#{comma_for_currencies row[180]}".pad_with_right_spaces! 15 # [FY]
+    line += "#{comma_for_currencies row[179]}".pad_with_right_spaces! 15 # [FY]
 
     # VD_IAMSPE_SPPREV_700372 n15
-    line += "#{comma_for_currencies row[181]}".pad_with_right_spaces! 15 # [FZ]
+    line += "#{comma_for_currencies row[180]}".pad_with_right_spaces! 15 # [FZ]
 
     # VD_IAMSPE_SPPREV_000504 n15
-    line += "#{comma_for_currencies row[182]}".pad_with_right_spaces! 15 # [GA]
+    line += "#{comma_for_currencies row[181]}".pad_with_right_spaces! 15 # [GA]
 
     # VD_IAMSPE_ODONTO_SEFAZ n15
-    line += "#{comma_for_currencies row[183]}".pad_with_right_spaces! 15 # [GB]
+    line += "#{comma_for_currencies row[182]}".pad_with_right_spaces! 15 # [GB]
 
     # VD_IAMSPE_ODONTO_SPPREV n15
-    line += "#{comma_for_currencies row[184]}".pad_with_right_spaces! 15 # [GC]
+    line += "#{comma_for_currencies row[183]}".pad_with_right_spaces! 15 # [GC]
 
     # VD_IAMSPE_BENEFI_070119 n15
-    line += "#{comma_for_currencies row[185]}".pad_with_right_spaces! 15 # [GD]
+    line += "#{comma_for_currencies row[184]}".pad_with_right_spaces! 15 # [GD]
 
     # VD_IAMSPE_AGRESF_070120 n15
-    line += "#{comma_for_currencies row[186]}".pad_with_right_spaces! 15 # [GE]
+    line += "#{comma_for_currencies row[185]}".pad_with_right_spaces! 15 # [GE]
 
     # VD_IAMSPE_BENESF_070121 n15
-    line += "#{comma_for_currencies row[187]}".pad_with_right_spaces! 15 # [GF]
+    line += "#{comma_for_currencies row[186]}".pad_with_right_spaces! 15 # [GF]
 
     # VD_IAMSPE_13SAL_070122 n15
-    line += "#{comma_for_currencies row[188]}".pad_with_right_spaces! 15 # [GG]
+    line += "#{comma_for_currencies row[187]}".pad_with_right_spaces! 15 # [GG]
 
     # VD_IAMSPE_AGRE13_070123 n15
-    line += "#{comma_for_currencies row[189]}".pad_with_right_spaces! 15 # [GH]
+    line += "#{comma_for_currencies row[188]}".pad_with_right_spaces! 15 # [GH]
 
     # VD_IAMSPE_BENE13_070124 n15
-    line += "#{comma_for_currencies row[190]}".pad_with_right_spaces! 15 # [GI]
+    line += "#{comma_for_currencies row[189]}".pad_with_right_spaces! 15 # [GI]
 
     # VD_IAMSPE_DEPENT_070641 n15
-    line += "#{comma_for_currencies row[191]}".pad_with_right_spaces! 15 # [GJ]
+    line += "#{comma_for_currencies row[190]}".pad_with_right_spaces! 15 # [GJ]
 
     # VD_IAMSPE_070642 n15
-    line += "#{comma_for_currencies row[192]}".pad_with_right_spaces! 15 # [GK]
+    line += "#{comma_for_currencies row[191]}".pad_with_right_spaces! 15 # [GK]
 
     # VD_IAMSPE_070037 n15
-    line += "#{comma_for_currencies row[193]}".pad_with_right_spaces! 15 # [GL]
+    line += "#{comma_for_currencies row[192]}".pad_with_right_spaces! 15 # [GL]
 
     # VD_IAMSPE_907100 n15
-    line += "#{comma_for_currencies row[194]}".pad_with_right_spaces! 15 # [GM]
+    line += "#{comma_for_currencies row[193]}".pad_with_right_spaces! 15 # [GM]
 
     # VD_IAMSPE_901699 n15
-    line += "#{comma_for_currencies row[195]}".pad_with_right_spaces! 15 # [GN]
+    line += "#{comma_for_currencies row[194]}".pad_with_right_spaces! 15 # [GN]
 
     # VD_IAMSPE_000924 n15
-    line += "#{comma_for_currencies row[196]}".pad_with_right_spaces! 15 # [GO]
+    line += "#{comma_for_currencies row[195]}".pad_with_right_spaces! 15 # [GO]
 
     # VD_IAMSPE_070006 n15
-    line += "#{comma_for_currencies row[197]}".pad_with_right_spaces! 15 # [GP]
+    line += "#{comma_for_currencies row[196]}".pad_with_right_spaces! 15 # [GP]
 
     # VD_IAMSPE_000510 n15
-    line += "#{comma_for_currencies row[198]}".pad_with_right_spaces! 15 # [GQ]
+    line += "#{comma_for_currencies row[197]}".pad_with_right_spaces! 15 # [GQ]
 
     # VD_IAMSPE_907015 n15
-    line += "#{comma_for_currencies row[199]}".pad_with_right_spaces! 15 # [GR]
+    line += "#{comma_for_currencies row[198]}".pad_with_right_spaces! 15 # [GR]
 
     # VD_IAMSPE_930401 n15
-    line += "#{comma_for_currencies row[200]}".pad_with_right_spaces! 15 # [GS]
+    line += "#{comma_for_currencies row[199]}".pad_with_right_spaces! 15 # [GS]
 
     # VD_IAMSPE_000110 n15
-    line += "#{comma_for_currencies row[201]}".pad_with_right_spaces! 15 # [GT]
+    line += "#{comma_for_currencies row[200]}".pad_with_right_spaces! 15 # [GT]
 
     # VD_IAMSPE_900302 n15
-    line += "#{comma_for_currencies row[202]}".pad_with_right_spaces! 15 # [GU]
+    line += "#{comma_for_currencies row[201]}".pad_with_right_spaces! 15 # [GU]
 
     # VD_IAMSPE_000923 n15
-    line += "#{comma_for_currencies row[203]}".pad_with_right_spaces! 15 # [GV]
+    line += "#{comma_for_currencies row[202]}".pad_with_right_spaces! 15 # [GV]
 
     # VD_IAMSPE_000826 n15
-    line += "#{comma_for_currencies row[204]}".pad_with_right_spaces! 15 # [GW]
+    line += "#{comma_for_currencies row[203]}".pad_with_right_spaces! 15 # [GW]
 
     # IDENT_UD n3
     line += IDENT_UD.pad_with_right_spaces! 3 # [GW]
 
     # VD_IAMSPE_070125 n15
-    line += "#{comma_for_currencies row[206]}".pad_with_right_spaces! 15 # [GW]
+    line += "#{comma_for_currencies row[204]}".pad_with_right_spaces! 15 # [GW]
 
     # VD_IAMSPE_070126 n15
-    line += "#{comma_for_currencies row[207]}".pad_with_right_spaces! 15 # [GW]
+    line += "#{comma_for_currencies row[205]}".pad_with_right_spaces! 15 # [GW]
 
     line += "\n"
     content += line
