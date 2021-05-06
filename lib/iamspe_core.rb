@@ -70,10 +70,10 @@ def personal_data_iamspe(sheet)
     line += "#{row[164]}".pad_with_right_spaces! 2 # [FJ]
 
     # COD_SITUA_FUNCIO a2
-    line += "#{row[165]}".pad_with_right_spaces! 2 # [FK]
+    line += "#{row[165]}".split(' = ')[0].to_s.pad_with_right_spaces! 2 # [FK]
 
     # MOTIVO_SITUA_FUNCIO n3
-    line += "#{row[166]}".pad_with_right_spaces! 3 # [FL]
+    line += "#{row[166]}".split(' = ')[0].to_s.pad_with_right_spaces! 3 # [FL]
 
     # DAT_INIC_SITUA_FUNCIO n8
     line += "#{row[61]}".pad_with_right_spaces! 8 # [BJ]
